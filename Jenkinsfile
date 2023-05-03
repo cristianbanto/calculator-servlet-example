@@ -9,7 +9,7 @@ pipeline {
       stage('checkout') {
            steps {
              
-                git branch: 'main', url: 'https://github.com/gabrielagherman/calculator-servlet-example.git'
+                git branch: 'main', url: 'https://github.com/cristianbanto/calculator-servlet-example.git'
              
           }
         }
@@ -24,7 +24,7 @@ pipeline {
   stage('Docker Build and Tag') {
            steps { 
                 sh 'docker build -t calculator:latest .' 
-                sh 'docker tag calculator gabrielagherman/calculator:latest'
+                sh 'docker tag calculator cristianbanto/calculator:latest'
                
           }
         }
@@ -33,7 +33,7 @@ pipeline {
           
             steps {
         withDockerRegistry([ credentialsId: "docker-cred", url: "" ]) {
-          sh  'docker push gabrielagherman/calculator:latest'
+          sh  'docker push cristianbanto/calculator:latest'
         }
                   
           }
@@ -43,7 +43,7 @@ pipeline {
              
           //   steps 
 			//{
-          //   sh "docker run -d -p 8003:8080 gabrielagherman/calculator"
+          //   sh "docker run -d -p 8003:8080 cristianbanto/calculator"
  
            // }
         // }
@@ -51,7 +51,7 @@ pipeline {
 	// stage("Git Checkout"){
 	//	 steps{
 	//		 sh 'pwd'
-	//		 sh 'git clone https://github.com/gabrielagherman/calculator-servlet-example.git'
+	//		 sh 'git clone https://github.com/cristianbanto/calculator-servlet-example.git'
 	//	 	 sh 'pwd'
 	//	 }
 	 //}
@@ -76,9 +76,9 @@ pipeline {
 		//withAWS(credentials: 'credentiale-masina', region: 'eu-central-1'){
 		//sshagent(['credentials']) {
 		   // sh "ssh -tt ubuntu@3.71.176.233" 
-	//	    sh "ssh ubuntu@3.71.176.233 docker run -d -p 8003:8080 gabrielagherman/samplewebapp"
+	//	    sh "ssh ubuntu@3.71.176.233 docker run -d -p 8003:8080 cristianbanto/samplewebapp"
 		   
-		   // sh "docker run -d -p 8003:8080 gabrielagherman/samplewebapp"
+		   // sh "docker run -d -p 8003:8080 cristianbanto/samplewebapp"
 		//}
             //}
         
