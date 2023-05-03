@@ -10,5 +10,6 @@
         image: cristianbanto/calculator:latest
         state: started
         restart: yes
+        pull: yes
         ports:
           - "8003:8080"
