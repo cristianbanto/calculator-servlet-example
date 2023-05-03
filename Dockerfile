@@ -1,6 +1,6 @@
 FROM tomcat:latest
 
-LABEL maintainer="Gabriela"
+LABEL maintainer="Cristi"
 
 ADD ./target/mycalcwebapp.war /usr/local/tomcat/webapps/
 
